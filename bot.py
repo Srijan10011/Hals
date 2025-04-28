@@ -5,6 +5,13 @@ from aiogram.filters import Command
 import db
 import session_manager
 import config
+import shutil
+import os
+
+def move_to_sold(file_path):
+    sold_folder = os.path.join(os.path.dirname(file_path), "sold")
+    os.makedirs(sold_folder, exist_ok=True)
+    shutil.move(file_path, os.path.join(sold_folder, os.path.basename(file_path)))
 
 bot = Bot(token=config.BOT_TOKEN)
 dp  = Dispatcher()
