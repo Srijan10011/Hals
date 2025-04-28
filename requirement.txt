@@ -1,3 +1,0 @@
-aiogram
-telethon
-sqlite3  # (builtin)
