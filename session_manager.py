@@ -16,8 +16,9 @@ async def pick_random_session():
 
 async def delete_session_after_use(session_file):
     # Move the session file to the recycle bin after OTP is fetched
-    send2trash(session_file)
-    print(f"Session file {session_file} has been moved to the recycle bin.")
+    move_to_sold(session_file_path)
+
+    print(f"Session file {session_file} has been moved.")
 
 
 async def listen_for_code(session_file: str):
